@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>bootstrap-modal - Test</title>
+  <link rel="icon" href="../img/common/favicon.ico">
+  <link rel="stylesheet" href="../module/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/modal.css">
+</head>
+<script src="../js/jquery-3.5.1.min.js"></script>
+<script src="../module/bootstrap/js/bootstrap.min.js"></script>
+
+<body>
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+    data-whatever="@mdo">OPEN MODAL</button>
+  <div class="modal show" tabindex="-1" id="exampleModal">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">审核流示意图</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+          <button type="submit" class="btn btn-primary">确认</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+  $(".modal-body").html(`
+  <p style="text-indent: 2em;">
+    2020年初，济南市启动“双贯通”精品思政课改革，在推进过程中，开展全过程全方位跟进式宣传，取得良好成效。
+</p>
+<p style="text-indent: 2em;">
+    “双贯通”精品思政课改革，即推进纵向贯通的“大中小思政课一体化”和横向贯通的“理论+实践”组合式思政课改革，探索区域整体推进。纵向贯通方面，成立全市大中小学思政课一体化建设联合教研与协同创新中心，开展常态化联合教学教研；举办“思政课一体化建设”圆桌论坛，邀请教育部专家专项指导，82万教师在线同步观看，在线研讨思政课改革。横向贯通方面，深耕“行走的思政课”，构建了8大类100所实践教学基地，把学校小课堂与社会大课堂有机贯通起来，在全国率先绘就区域思政课实践教学版图，在实践情境中开展思政教育。
+</p>
+<p style="text-indent: 2em;">
+    两年多来，该项改革屡获省市领导肯定，入围《中华人民共和国制度创新大典》备选案例，获得2020年山东省学校思政课教学改革重点项目和2020年度山东省教育综合改革和制度创新十佳案例，入选教育部重大课题“健全立德树人落实机制典型案例”。在落实推进中，积极向媒体推介，得到了《人民日报》、中央电视台、《中国教育报》、《中国德育》《现代教育》、《山东教育报》等多家媒体的广泛关注并给予报道，收到良好的宣传效果。
+</p>
+<p style="text-indent: 2em;">
+    一是全过程宣传。济南市“双贯通”思政课改革将项目推进过程与新闻宣传工作密切结合，从项目启动开始，媒体宣传全程跟进。二是线上线下相结合。济南市“双贯通”思政课改革推进过程中，采取线上线下相结合的方式举办多场教研会、圆桌论坛、实践教学等现场活动，活动中联系媒体通过进行线上直播、新闻报道等方式，实现线下活动扎实推进，线上宣传及时跟进，有效扩大项目影响力。三是内部外部相结合。济南市“双贯通”思政课改革注重将内部宣传和外部宣传相结合。一方面，在系统内部做好宣传，先后获得《山东教育工作情况》专题推介，获得教育部官网、山东省发展和改革委员会官网、山东省教育厅官网、学习强国山东学习平台、中国共产党济南市委员会官网等新闻报道，以及在济南市教育局官网和官方新媒体平台账号进行广泛宣传。另一方面，面对社会公众做好外部宣传，借力外部合作媒体的力量，跟进项目推进，做好新闻报道、图文直播等，进一步扩大宣传范围和影响力，得到了中央、省、市三级多家媒体的广泛关注报道。
+</p>
+<p style="text-indent: 2em;">
+    据不完全统计，该项改革，全网新闻报道超5000条，其中中央级媒体超200条，省级媒体超1000条，市级媒体超1000条。人民日报刊发王品木署名文章《上好思政课 当好引路人》；CCTV-1《央视新闻》播发《济南：100个教学基地 让思政课扎根广袤大地》；CCTV新闻频道播发《济南：让学生在行走中接受思政教育》；中国教育报刊发《济南推进双贯通思政育人改革》《济南打造“行走的思政课” 建100个思政课实践基地》；中国教育报刊发《率先出台实践教学实施意见 建立八大类百个时间教学基地 济南打造“行走”的思政课堂》；山东教育报刊发《大中小学同上“一节课” 济南市探索“思政课程一体化建设”》《济南市深耕“行走的思政课”》；获得人民网、新华网、山东电视台、中国山东网、大众日报、齐鲁晚报、济南日报等媒体广泛报道。
+</p>
+  `)
+
+</script>
+
+</html>

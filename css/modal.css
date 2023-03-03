@@ -1,0 +1,130 @@
+.modal-dialog .modal-header {
+  position: relative;
+  /*去掉边框 */
+  border-bottom: none !important;
+}
+
+.modal-dialog .border-bottom-blue-grey.border-bottom-lighten-4 {
+  /*去掉边框 */
+  border-bottom: none !important;
+}
+
+.modal-dialog .modal-header .modal-title {
+  margin: 0 auto;
+  font-size: 18px;
+  font-weight: bold;
+  color: #222948;
+  width: 100%;
+  text-align: center;
+}
+
+.modal-dialog .modal-header .close {
+  background-size: cover !important;
+  background: url("../img/close.png") !important;
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  padding: 0 !important;
+  margin: 0 !important;
+  right: -10px;
+  top: -10px;
+}
+
+.modal-dialog .modal-header .close>span {
+  display: none;
+}
+
+.modal-dialog .modal-header {
+  height: 66px;
+  background: linear-gradient(0deg, #FFFFFF 0%, #ECF2FF 100%, #EFF3FF 100%);
+  padding: 35px 0 10px 0;
+}
+
+.modal-dialog .modal-body {
+  padding: 25px 0 15px !important;
+  margin: 0 50px;
+  border-bottom: 1px solid #EAECF2;
+}
+
+.modal-dialog .modal-header .modal-title::before {
+  background-image: url("../img/authorize/dialog-header-right.png");
+  margin-right: 60px;
+}
+
+.modal-dialog .modal-header .modal-title::after {
+  background-image: url("../img/authorize/dialog-header-left.png");
+  margin-left: 60px;
+}
+
+.modal-dialog .modal-header .modal-title::before,
+.modal-dialog .modal-header .modal-title::after {
+  content: "";
+  display: inline-block;
+  width: 95px;
+  height: 11px;
+  background-size: cover;
+}
+
+.modal-dialog .border-top-blue-grey.border-top-lighten-4 {
+  /* 去掉边框 */
+  border: none !important;
+}
+
+.modal-dialog .modal-footer {
+  padding: 10px 0 !important;
+  margin: 0 50px;
+}
+
+.modal-dialog button,
+.modal-dialog button.btn-warning,
+.modal-dialog button.btn-primary,
+.modal-dialog button.btn-danger {
+  padding: 0 14px !important;
+  height: 32px;
+  border-radius: 2px;
+  text-align: center;
+  line-height: 32px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.modal-dialog button,
+.modal-dialog button:hover,
+.modal-dialog button:focus,
+.modal-dialog button.btn-warning,
+.modal-dialog button.btn-warning:hover,
+.modal-dialog button.btn-warning:focus {
+  background: #F2F4F8 !important;
+  color: #3C3E46 !important;
+  margin-right: 12px;
+  border: none;
+}
+
+.modal-dialog button.btn-primary,
+.modal-dialog button.btn-primary:hover,
+.modal-dialog button.btn-primary:focus {
+  background: #125CFD !important;
+  color: #fff !important;
+}
+
+.modal-dialog button.btn-danger,
+.modal-dialog button.btn-danger:hover,
+.modal-dialog button.btn-danger:focus {
+  color: #FF4961 !important;
+  background-color: #fff0f2 !important;
+  border: 1px solid #ffb5bf !important;
+  border-radius: 0;
+}
+
+.modal-dialog button>i {
+  display: none;
+}
+
+.modal-dialog.modal-sm .modal-header .modal-title::before {
+  margin-right: 30px;
+}
+
+.modal-dialog.modal-sm .modal-header .modal-title::after {
+  margin-left: 30px;
+}
