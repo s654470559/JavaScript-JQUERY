@@ -1,0 +1,178 @@
+#treeGrid,
+#treeGrid * {
+  box-sizing: initial;
+}
+
+.TreeGrid {
+  border-collapse: collapse;
+  font-size: 14px;
+  border: 1px solid #778899;
+}
+
+.TreeGrid .header {
+  font-size: 14px;
+  font-weight: bold;
+  color: #3C3E46;
+  background-color: #FFFFFF;
+}
+
+
+
+.TreeGrid td {
+  border: 1px solid #E3EBF3;
+  padding: 8px 12px;
+}
+
+.TreeGrid tr:nth-child(2n) {
+  background-color: #FAFBFC;
+}
+
+.TreeGrid a {
+  text-decoration: none;
+}
+
+.TreeGrid a:hover {
+  color: blue;
+}
+
+.TreeGrid .image_hand {
+  border: 0;
+  cursor: pointer;
+  margin: 0 8px 0 2px;
+}
+
+.TreeGrid .image_nohand {
+  border: 0;
+  width: 15px;
+  margin-right: 8px;
+  cursor: default;
+  display: none;
+}
+
+.handle {
+  display: inline-block;
+  margin-right: 20px;
+  color: #125CFD;
+  cursor: pointer;
+  pointer-events: all;
+}
+
+.handle:last-child {
+  margin-right: 0;
+}
+
+.btn.btn-blue125 {
+  background-color: #125CFB;
+  color: #fff;
+  width: 88px;
+  height: 30px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.btn.btn-set {
+  background-color: #2DA5F3;
+  color: #fff;
+  width: 88px;
+  height: 30px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.btn.btn-more {
+  width: 88px;
+  height: 30px;
+  text-align: center;
+  background-color: #E1EAFF;
+  color: #125CFB;
+  font-size: 14px;
+}
+
+.dataTables_length {
+  padding-bottom: 40px;
+}
+
+.TreeGrid tbody {
+  color: #5C5F6B;
+}
+
+.TreeGrid .sort {
+  margin-left: 5px;
+  cursor: pointer;
+  width: 7px;
+  height: auto;
+  vertical-align: 0;
+}
+
+.optionButtons .more {
+  display: inline-block;
+  position: relative;
+}
+
+.optionButtons .btn-groups {
+  flex-direction: column;
+  position: absolute;
+  left: 0;
+  bottom: -121px;
+  display: none;
+  border: 1px solid #a0a0a0;
+  background-color: #ffffff;
+  border-radius: 2px;
+  width: 88px;
+  background: #FFFFFF;
+  border: 1px solid #D0D5D9;
+  box-shadow: 0px 0px 4px 0px rgba(190, 190, 192, 0.9);
+  padding: 8px 0;
+}
+
+
+.optionButtons .btn-groups .handle-item {
+  margin: 0px;
+  padding: 4px 12px;
+  color: #666;
+  cursor: pointer;
+  text-align: center;
+}
+
+.optionButtons .btn-groups .handle-item:hover {
+  background-color: #F4F5FA;
+  color: #125CFB;
+}
+
+.optionButtons .more #moreClick {
+  margin-right: 0 !important;
+}
+
+.row_active {
+  background-color: #666ee8 !important;
+  color: #FFFFFF;
+}
+
+.row_active .handle,
+.row_active td a {
+  color: #FFFFFF !important;
+}
+
+.TreeGrid .header.row_active {
+  background-color: #FFFFFF !important;
+}
+
+.TreeGrid tr td:last-child {
+  pointer-events: none;
+}
+
+.only_level1 {
+  pointer-events: none;
+}
+
+#table tbody tr td.data_empty {
+  text-align: center;
+}
+
+.optionButtons>a:hover {
+  color: #fff;
+}
+
+.optionButtons .more #moreClick:hover {
+  color: #125CFB;
+}
