@@ -176,3 +176,12 @@
 .optionButtons .more #moreClick:hover {
   color: #125CFB;
 }
+
+.select {
+  display: inline-block;
+  margin: 15px auto;
+  padding: 3px 8px;
+  background: #c80000;
+  color: #fff;
+  border-radius: 4px;
+}

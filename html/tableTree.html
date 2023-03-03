@@ -14,7 +14,10 @@
 <body>
   <div id="treeGrid" class="renderTable"></div>
 
-
+  <div class="select">
+    <span id="selectNum">0</span>
+    行被选中
+  </div>
 </body>
 
 
@@ -177,6 +180,7 @@
     selectData = counter
     counter = []
     console.log(selectData, "选中的数据");
+    $("#selectNum").text(selectData.length)
   }
 
 
