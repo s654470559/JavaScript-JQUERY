@@ -33,7 +33,7 @@
 
  .category-item {
    float: left;
-   width: 368px;
+   width: 545px;
    padding: 20px 24px 24px;
    border-radius: 12px;
    background-color: #fff;
@@ -41,7 +41,6 @@
  }
 
  .top-list-box {
-   overflow: hidden;
    height: 426px;
    margin-top: 18px;
    transform: translate3d(0, 0, 0);
@@ -50,19 +49,17 @@
  .top-list-box .hot-item {
    position: relative;
    display: block;
-   height: 16px;
-   margin-bottom: 16px;
+   margin-bottom: 10px;
    cursor: pointer;
    transition: all 0.5s;
  }
 
  .top-list-box .hot-item.active {
-   height: 136px;
+   height: 92px;
  }
 
  .top-list-box .hot-item.active .active-item {
-   height: 136px;
-   border: 1px solid rgba(0, 0, 0, 0.03);
+   height: 92px;
    opacity: 1;
  }
 
@@ -74,54 +71,52 @@
  .top-list-box .active-item,
  .top-list-box .normal-news {
    position: relative;
-   overflow: hidden;
    transition: all 0.5s;
  }
 
  .top-list-box .active-item {
    height: 0;
-   border-radius: 12px;
    opacity: 0;
  }
 
  .top-list-box .active-item .active-item-img {
-   width: 100%;
+   width: 33%;
    height: 100%;
-   border-radius: 12px;
+   background-size: cover;
+   background-position: center;
+   position: relative;
+   flex-shrink: 0;
+ }
+
+ .top-list-box .active-item.top-news .active-item-img::before {
+   content: "";
+   display: inline-block;
+   width: 31px;
+   height: 33px;
+   background-size: cover;
+   background-position: center;
+   background-image: url("../img/baiduNews/ranking-new.png");
+   position: absolute;
+   top: -3px;
+   left: -4px;
  }
 
  .top-list-box .active-item .sign-index {
    position: absolute;
-   bottom: 0;
+   top: 0;
    left: 0;
    z-index: 1;
-   width: 24px;
-   height: 24px;
-   border-radius: 1px 12px 1px 12px;
    font-size: 14px;
    line-height: 24px;
    text-align: center;
-   background-color: #faa90e;
    color: #fff;
  }
 
- .top-list-box .active-item .sign-index.c-index-bg0 {
-   background-color: #fe2d46;
- }
-
- .top-list-box .active-item .sign-index.c-index-bg1 {
-   background-color: #f60;
- }
 
  .top-list-box .active-item .content-pos {
-   position: absolute;
-   right: 0;
-   bottom: 0;
-   left: 0;
-   box-sizing: border-box;
-   height: 30px;
-   padding: 8px 38px 0 28px;
    font-size: 14px;
+   flex: 1;
+   padding-left: 10px;
  }
 
  .top-list-box .active-item .content-pos .content-bg {
@@ -135,61 +130,59 @@
  }
 
  .top-list-box .active-item .news-name {
-   color: #fff;
+   color: #303132;
+   font-size: 16px;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-box-orient: vertical;
+   -webkit-line-clamp: 2;
+   height: auto;
+   line-height: 18px;
+   padding: 0;
  }
 
  .top-list-box .normal-news {
-   height: 16px;
-   padding: 0 8px 0 8px;
-   font-size: 14px;
-   line-height: 16px;
    color: #9195a3;
    opacity: 1;
+   display: flex;
+   align-items: center;
  }
 
  .top-list-box .normal-news .news-index {
-   position: absolute;
-   top: 1px;
-   width: 20px;
-   font-size: 16px;
+   width: 22px;
+   height: 22px;
+   background: #FFFFFF;
+   border: 1px solid #F8F8FA;
+   text-align: center;
+   line-height: 22px;
+   font-size: 12px;
+   font-weight: bold;
+   color: #848790;
+   display: inline-block;
+   vertical-align: middle;
  }
 
- .top-list-box .normal-news .content-wrap {
-   overflow: hidden;
-   margin: 0 30px 0 21px;
- }
+
 
  .top-list-box .normal-news .news-name {
-   color: #222;
+   font-size: 14px;
+   color: #303132;
+   flex: 1;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
  }
 
  .top-list-box .news-name {
    position: relative;
    display: block;
-   height: 16px;
-   padding-right: 44px;
-   line-height: 16px;
  }
 
- .top-list-box .news-name .c-single-text-ellipsis {
-   display: inline-block;
-   max-width: 100%;
- }
 
- tate_NdlbW .top-list-box .news-name .hot-score {
-   position: absolute;
-   top: 0;
-   overflow: hidden;
-   width: 40px;
-   margin-left: 8px;
-   font-size: 13px;
-   color: #9195a3;
- }
 
  .top-icon {
-   width: 14px;
-   height: 14px;
-   margin-top: 5px;
+   width: 31px;
  }
 
  .top-icon-mormal {
@@ -230,10 +223,9 @@
  }
 
  .left-title img {
-   width: 20px;
-   height: 20px;
-   margin-right: 4px;
-   vertical-align: top;
+   width: 14px;
+   margin-right: 10px;
+   vertical-align: -2px;
  }
 
  .left-title .title_jDbBV {
@@ -260,29 +252,147 @@
    display: inline-block;
    font-size: 13px;
    line-height: 13px;
+   margin-right: 5px;
  }
 
- .btn-more img {
-   width: 9px;
-   height: 9px;
- }
-
- .btn-more:hover {
-   color: #125CFB;
- }
-
- .btn-more .icon-right {
-   width: 9px;
-   height: 9px;
+ .btn-more-icon {
+   width: 6px;
+   height: 10px;
    background-size: cover;
-   background-image: url("../img/baiduNews/hot-news-more.png");
+   background-image: url("../img/baiduNews/btn-more.png");
    display: inline-block;
  }
 
- .btn-more:hover .icon-right {
-   background-image: url("../img/baiduNews/hot-news-more-active.png");
+ .btn-more:hover {
+   color: #125CFD;
  }
+
+ .btn-more:hover .btn-more-icon {
+   background-image: url("../img/baiduNews/btn-more-active.png");
+ }
+
 
  img {
    object-fit: cover;
+ }
+
+ .hot-item .active-item {
+   display: flex;
+ }
+
+ .top-list-box .active-item .description {
+   height: 22px;
+   background: #F4F5FA;
+   padding: 0 13px 0 7px;
+   font-size: 12px;
+   color: #7C7F87;
+   position: relative;
+   margin: 11px 0 7px;
+   width: auto;
+   max-width: 100%;
+   display: inline-block;
+   min-width: 100px;
+
+ }
+
+ .top-list-box .active-item .description .desc-text {
+   white-space: nowrap;
+   text-overflow: ellipsis;
+   overflow: hidden;
+   max-width: 77%;
+   line-height: 22px;
+ }
+
+ .top-list-box .active-item .description .time {
+   width: 85px;
+   height: 22px;
+   background: #FFFFFF;
+   border: 1px solid #EFF0F5;
+   line-height: 22px;
+   text-align: center;
+   font-size: 12px;
+   color: #7C7F87;
+   position: absolute;
+   right: 0;
+   top: 50%;
+   transform: translateY(-50%);
+ }
+
+ .top-list-box .active-item .choose img {
+   width: 14px;
+ }
+
+ .top-list-box .active-item .choose * {
+   vertical-align: middle;
+ }
+
+ .top-list-box .active-item .choose span {
+   font-size: 12px;
+   color: #125CFD;
+ }
+
+ .top-list-box .normal-news * {
+   display: inline-block;
+   vertical-align: middle;
+ }
+
+ .top-list-box .normal-news .tag {
+   width: 64px;
+   height: 23px;
+   background: rgba(255, 102, 51, 0.2);
+   border: 1px solid #FF6633;
+   line-height: 23px;
+   text-align: center;
+   color: #FF6633;
+   font-size: 12px;
+   margin: 0 7px;
+ }
+
+ .top-list-box .normal-news .news-index.top-news {
+   display: inline-block;
+   width: 22px;
+   height: 22px;
+   background-size: cover;
+   background-position: center;
+   background-image: url('../img/baiduNews/ranking-new.png');
+   border: none;
+   vertical-align: -2px;
+ }
+
+ .hot-item .active-item .news-index {
+   width: 22px;
+   height: 22px;
+   line-height: 22px;
+   text-align: center;
+   font-size: 12px;
+   font-weight: bold;
+   color: #FFFFFF;
+   position: absolute;
+   top: 0;
+   left: 0;
+   box-shadow: 0px 2px 2px 0px rgba(139, 148, 154, 0.5);
+   border-radius: 6px 0px 6px 0px;
+ }
+
+
+ .top-list-box .hot-item:nth-child(2) .news-index {
+   background: #F52727;
+   color: #FFFFFF;
+
+ }
+
+ .top-list-box .hot-item:nth-child(3) .news-index {
+   background: #FF6600;
+   color: #FFFFFF;
+
+ }
+
+ .top-list-box .hot-item:nth-child(4) .news-index {
+   background: #FAA90E;
+   color: #FFFFFF;
+
+ }
+
+ .top-list-box .hot-item.active .active-item .choose {
+   padding-left: 7px;
  }

@@ -33,6 +33,10 @@ html {
   overflow: -moz-scrollbars
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body,
 button,
 input,

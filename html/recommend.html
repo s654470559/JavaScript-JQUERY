@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html class="loading" lang="zh-CN" data-textdirection="ltr">
+<!-- BEGIN: Head-->
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+  <title>图文投稿 - T媒体融合运营实训平台</title>
+  <meta name="description" content="中国教育在线laravel框架Demo">
+  <meta name="keywords" content="中国教育在线laravel框架Demo">
+  <meta name="author" content="guozw">
+  <link rel="apple-touch-icon" href="http://rmt.66.dev.eol.com.cn/app-assets/images/ico/apple-icon-120.png">
+
+  <link rel="shortcut icon" type="image/x-icon" href="http://rmt.66.dev.eol.com.cn/app-assets/images/ico/favicon.ico">
+  <link href="http://rmt.66.dev.eol.com.cn/app-assets/css/googleapis/index.css" rel="stylesheet">
+
+  <!-- BEGIN: Vendor CSS-->
+  <link rel="stylesheet" type="text/css" href="http://rmt.66.dev.eol.com.cn/app-assets/vendors/css/vendors.min.css">
+  <link rel="stylesheet" type="text/css"
+    href="http://rmt.66.dev.eol.com.cn/app-assets/vendors/css/forms/spinner/jquery.bootstrap-touchspin.css">
+  <link rel="stylesheet" type="text/css"
+    href="http://rmt.66.dev.eol.com.cn/app-assets/vendors/css/forms/icheck/icheck.css">
+  <link rel="stylesheet" type="text/css"
+    href="http://rmt.66.dev.eol.com.cn/app-assets/vendors/css/forms/icheck/custom.css">
+  <link rel="stylesheet" type="text/css" href="http://rmt.66.dev.eol.com.cn/app-assets/css/pages/page-users.min.css">
+  <link rel="stylesheet" type="text/css"
+    href="http://rmt.66.dev.eol.com.cn/app-assets/vendors/css/extensions/sweetalert2.min.11.2.1.css">
+  <link rel="stylesheet" type="text/css"
+    href="http://rmt.66.dev.eol.com.cn/app-assets/vendors/css/pickers/daterange/daterangepicker.css">
+  <!-- END: Vendor CSS-->
+  <link rel="stylesheet" type="text/css"
+    href="http://rmt.66.dev.eol.com.cn/app-assets/vendors/css/forms/toggle/bootstrap-switch.min.css">
+  <link rel="stylesheet" type="text/css"
+    href="http://rmt.66.dev.eol.com.cn/app-assets/vendors/css/forms/toggle/switchery.min.css">
+  <link rel="stylesheet" type="text/css"
+    href="http://rmt.66.dev.eol.com.cn/app-assets/css/plugins/forms/switch.min.css">
+  <link rel="stylesheet" type="text/css"
+    href="http://rmt.66.dev.eol.com.cn/app-assets/css/core/colors/palette-switch.min.css">
+  <link rel="stylesheet" type="text/css" href="http://rmt.66.dev.eol.com.cn/app-assets/css/bootstrap-tagsinput.css">
+  <link rel="stylesheet" type="text/css"
+    href="http://rmt.66.dev.eol.com.cn/app-assets/js/scripts/webuploader/webuploader.css">
+  <style>
+    #picker {
+      float: left;
+      padding-right: 10px;
+    }
+
+    .webuploader-pick {
+      width: 120px;
+      height: 40px;
+      background-color: #666ee8 !important;
+    }
+
+    .bootstrap-tagsinput {
+      border: 1px solid #cacfe7;
+      color: #3b4781;
+      border-radius: .25rem;
+      width: 100%;
+    }
+
+    .bootstrap-tagsinput input {
+      border: none;
+      padding: .75rem 1rem;
+      width: auto !important;
+    }
+
+    .bootstrap-tagsinput input:focus {
+      box-shadow: none !important;
+    }
+
+    .bootstrap-tagsinput .label-info {
+      border-radius: 4px;
+      background-color: #1abc9c;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      margin: 0 5px 5px 0;
+      padding: 3px 10px 3px 14px;
+      transition: .25s linear;
+    }
+
+    .imgs-message-box {
+      background-color: #F3F3F3;
+      border: 1px solid #D4D4D4;
+      border-radius: 3px;
+      font-size: 12px;
+      color: #686868;
+      width: 200px;
+      height: 120px;
+      line-height: 120px;
+      text-align: center;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+
+    .imgs-content-box {
+      width: 200px;
+      height: 120px;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    /*html,body{background:#fff}*/
+    /*body{padding: 0px 20px;}*/
+    .edui-button.edui-for-135editor .edui-button-wrap .edui-button-body .edui-icon {
+      background-image: url("/app-assets/images/resource/editor-135-icon.png") !important;
+      background-size: 85%;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  </style>
+
+  <!-- CSRF Token -->
+  <meta name="csrf-token" content="uNLU46AE6mcyVV0CwhJVJVGOlLHQsqSJV0ArdQOo">
+
+  <!-- BEGIN: Theme CSS-->
+  <link rel="stylesheet" type="text/css" href="http://rmt.66.dev.eol.com.cn/app-assets/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="http://rmt.66.dev.eol.com.cn/app-assets/css/bootstrap-extended.min.css">
+  <link rel="stylesheet" type="text/css" href="http://rmt.66.dev.eol.com.cn/app-assets/css/colors.min.css">
+  <link rel="stylesheet" type="text/css" href="http://rmt.66.dev.eol.com.cn/app-assets/css/components.min.css">
+  <!-- END: Theme CSS-->
+
+  <!-- BEGIN: Page CSS-->
+  <link rel="stylesheet" type="text/css"
+    href="http://rmt.66.dev.eol.com.cn/app-assets/css/core/menu/menu-types/vertical-menu.min.css">
+  <link rel="stylesheet" type="text/css"
+    href="http://rmt.66.dev.eol.com.cn/app-assets/css/core/colors/palette-gradient.min.css">
+  <link rel="stylesheet" type="text/css"
+    href="http://rmt.66.dev.eol.com.cn/app-assets/css/plugins/forms/validation/form-validation.min.css">
+  <!-- END: Page CSS-->
+
+
+  <!-- BEGIN: Custom CSS-->
+  <link rel="stylesheet" type="text/css" href="http://rmt.66.dev.eol.com.cn/assets/css/style.css">
+  <link rel="stylesheet" type="text/css" href="http://rmt.66.dev.eol.com.cn/assets/css/font.css">
+  <!-- END: Custom CSS-->
+
+  <!-- 新版样式 -->
+  <link rel="stylesheet" type="text/css" href="http://rmt.66.dev.eol.com.cn/assets/css/newStyle.css">
+
+  <!-- * 我的CSS -->
+  <link rel="stylesheet" type="text/css" href="../css/recommend.css">
+
+
+</head>
+<!-- END: Head-->
+
+<!-- BEGIN: Body-->
+
+<body class="vertical-layout vertical-menu 2-columns   fixed-navbar" data-open="click" data-menu="vertical-menu"
+  data-col="2-columns">
+
+  <!-- BEGIN: Header-->
+  <nav
+    class="header-navbar navbar-expand-md navbar navbar-with-menu navbar-without-dd-arrow fixed-top navbar-semi-light bg-info">
+    <div class="navbar-wrapper">
+      <div class="navbar-header">
+        <ul class="nav navbar-nav flex-row">
+          <li class="nav-item mobile-menu d-md-none mr-auto"></li>
+          <li class="nav-item"><a class="navbar-brand" style="clear: both" href="/">
+              <img class="brand-logo" alt="modern admin logo"
+                src="http://rmt.66.dev.eol.com.cn/app-assets/images/logo/logo.png">
+              <h3 class="brand-text">T媒体融合运营实训平台</h3>
+            </a></li>
+          <li class="nav-item d-md-none"><a class="nav-link open-navbar-container" data-toggle="collapse"
+              data-target="#navbar-mobile"><i class="la la-ellipsis-v"></i></a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="navbar-container content">
+        <div class="collapse navbar-collapse" id="navbar-mobile">
+          <ul class="nav navbar-nav mr-auto float-left">
+            <li class="nav-item d-none d-md-block"></li>
+            <li class="nav-item d-none d-lg-block"><a class="nav-link nav-link-expand fullScreen" href="#"><i
+                  class="ficon ft-maximize"></i></a>
+            </li>
+
+            <li class="nav-item"><a class="nav-link " href="/">工作台</a></li>
+
+            <li class="nav-item"><a class="nav-link " href="/plan/network">策划指挥</a></li>
+            <li class="nav-item"><a class="nav-link " href="/collection/node">采集汇聚</a></li>
+            <li class="nav-item"><a class="nav-link active" href="/content/personal/draft/my_box">内容创作</a></li>
+            <li class="nav-item"><a class="nav-link " href="/content/audit/publish">融合发布</a></li>
+            <li class="nav-item"><a class="nav-link " href="/site/topic/info">互动运营</a></li>
+            <li class="nav-item"><a class="nav-link " href="/stat/sample/findex">数据分析</a></li>
+            <li class="nav-item"><a class="nav-link " href="/site">系统管理</a></li>
+          </ul>
+          <ul class="nav navbar-nav float-right userInfo">
+
+            <li class="dropdown dropdown-user nav-item userBox">
+              <a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
+                <span class="mr-1 user-name text-bold-700">
+                  <!-- <small>欢迎您：</small> -->
+                  <img class="userCenter" src="http://rmt.66.dev.eol.com.cn/app-assets/images/logo/userCenter.png">
+                  VR老师
+                </span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right">
+
+
+
+
+                <a class="dropdown-item" href="https://passport.53.dev.eol.com.cn"><i class="ft-server"></i> 教务管理 </a>
+                <a class="dropdown-item" href="https://passport.53.dev.eol.com.cn/user/info/editpwd"><i
+                    class="ft-edit"></i> 修改密码 </a>
+                <a class="dropdown-item" href="javascript:;" onclick="jumpLogin()"><i class="ft-power"></i> 退出 </a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- END: Header-->
+
+  <!-- BEGIN: Main Menu-->
+  <div class="main-menu menu-fixed menu-light menu-accordion " data-scroll-to-active="true">
+    <div class="main-menu-content">
+      <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+        <li class="nav-item ">
+          <a class="menu-item" href="#">
+            <i class="la la-file-text"></i><span class='menu-title'>我的稿库</span></a>
+          <ul class="menu-content">
+
+            <li class="nav-item active ">
+              <a class="menu-item" href="/content/personal/draft/my_box">
+                <i></i><span>草稿箱</span></a>
+            </li>
+            <li class="nav-item ">
+              <a class="menu-item" href="/content/personal/draft/my_review">
+                <i></i><span>待审核</span></a>
+            </li>
+            <li class="nav-item ">
+              <a class="menu-item" href="/content/personal/draft/my_refer">
+                <i></i><span>已投稿</span></a>
+            </li>
+            <li class="nav-item ">
+              <a class="menu-item" href="/content/personal/draft/my_rejected">
+                <i></i><span>已退稿</span></a>
+            </li>
+            <li class="nav-item ">
+              <a class="menu-item" href="/content/personal/draft/my_recycle">
+                <i></i><span>回收站</span></a>
+            </li>
+            <li class="nav-item ">
+              <a class="menu-item" href="/content/personal/draft/my_node">
+                <i></i><span>收集稿库</span></a>
+            </li>
+
+          </ul>
+        </li>
+        <li class="nav-item ">
+          <a class="menu-item" href="#">
+            <i class="la la-bar-chart"></i><span class='menu-title'>融合稿库</span></a>
+          <ul class="menu-content">
+
+            <li class="nav-item ">
+              <a class="menu-item" href="/content/audit/class">
+                <i></i><span>待我审批</span></a>
+            </li>
+            <li class="nav-item ">
+              <a class="menu-item" href="/content/draft">
+                <i></i><span>稿件库</span></a>
+            </li>
+
+          </ul>
+        </li>
+
+      </ul>
+      <a class="nav-link nav-menu-main menu-toggle hidden-xs" id="toggle" href="#"><i
+          class="ft-menu font-large-1"></i></a>
+    </div>
+  </div>
+
+
+  <!-- END: Main Menu-->
+
+
+  <!-- BEGIN: Content-->
+  <div class="app-content content">
+    <div class="content-overlay"></div>
+
+    <div class="content-wrapper">
+      <div class="content-header row">
+        <div class="content-header-left col-md-6 col-12  breadcrumb-new">
+          <h3 class="content-header-title mb-0 d-inline-block">
+            大屏推荐 </h3>
+          <div class="row breadcrumbs-top d-inline-block">
+            <div class="breadcrumb-wrapper col-12">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">首页</a>
+                </li>
+                <li class="breadcrumb-item active">权威数据库
+                </li>
+                <li class="breadcrumb-item active">资源列表
+                </li>
+                <li class="breadcrumb-item active">大屏推荐
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+        <div class="content-header-right text-right col-md-6 col-12  breadcrumb-new">
+          <a href="https://www.jiaoyu.cn" class="jump-button">查看大屏</a>
+        </div>
+      </div>
+      <div class="content-body">
+        <section>
+          <!-- 内容 start -->
+          <div class="row splitScreen">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-content">
+                  <!-- 点击图标可编辑名称 -->
+                  <div class="card-header-tag"> 教育要闻 <div class="edit-header-icon"></div>
+                  </div>
+                  <div class="card-body">
+
+                    <ul class="main-list" id="moveList">
+                      <!-- 对应类名 => 置顶 第一 第二 第三 / top-new first third second  -->
+                      <li data-id="1" class="item top-new">
+                        <div class="thumb-image"
+                          style="background-image:url('https://rmt.eol.cn/files/Resource/jyzxweb/images/20230306/9d5e42907bcc4a005297be62f0b64102.jpg?t=1678090404') ;">
+                          <div class="news-index"></div>
+                        </div>
+                        <div class="main-text">
+                          <a href="#" target="_blank" class="title">党员干部是基层党组织发挥战斗堡垒作用的中坚力量</a>
+                          <div class="other">
+                            <div class="source">
+                              江苏省常州市教育厅江苏省常州市教育厅江苏省常州市教育厅江苏省常州市教育厅江苏省常州市教育厅江苏省常州市教育厅江苏省常州市教育厅江苏省常州市教育厅江苏省常州市教育厅江苏省常州市教育厅江苏省常州市教育厅
+                            </div>
+                            <div class="time">2022-12-09 12:30</div>
+                          </div>
+                          <div class="description">
+                            公众的信任与信赖，构成了生生不息的繁荣景象。但是如今，人们却对专家的话半信半疑，甚至充满抱怨，此类的言论骂名充斥各地，究竟“专家”何时开始不受人们的待见？看看这些“专家”们，
+                            都干了什么事。
+                          </div>
+                          <div class="btn-groups">
+                            <div class="move">
+                              <div class="icon-move"></div>
+                              <span>拖动</span>
+                            </div>
+                            <div class="icon-top"></div>
+                          </div>
+                        </div>
+
+                        <div class="right-handle">
+                          <div class="select">
+                            <div class="icon-book"></div>
+                            <span>选用到稿库</span>
+                          </div>
+
+                          <!-- 隐藏 / 推荐到大屏  展示推荐到大屏时display加类名show  -->
+                          <div class="display show">
+                            <!-- <div class="icon"></div>
+                            <span>隐藏大屏展示</span> -->
+
+                            <div class="icon"></div>
+                            <span>推荐到大屏</span>
+                          </div>
+                        </div>
+                      </li>
+
+                      <li data-id="2" class="item first">
+                        <div class="thumb-image"
+                          style="background-image:url('https://rmt.eol.cn/files/Resource/jyzxweb/images/20230306/9d5e42907bcc4a005297be62f0b64102.jpg?t=1678090404') ;">
+                          <div class="news-index">1</div>
+                        </div>
+                        <div class="main-text">
+                          <a href="#" target="_blank" class="title">党员干部是基层党组织发挥战斗堡垒作用的中坚力量</a>
+                          <div class="other">
+                            <div class="source">江苏省常州市教育厅</div>
+                            <div class="time">2022-12-09 12:30</div>
+                          </div>
+                          <div class="description">
+                            公众的信任与信赖，构成了生生不息的繁荣景象。但是如今，人们却对专家的话半信半疑，甚至充满抱怨，此类的言论骂名充斥各地，究竟“专家”何时开始不受人们的待见？看看这些“专家”们，
+                            都干了什么事。
+                          </div>
+                          <div class="btn-groups">
+                            <div class="move">
+                              <div class="icon-move"></div>
+                              <span>拖动</span>
+                            </div>
+                            <div class="icon-top"></div>
+                          </div>
+                        </div>
+
+                        <div class="right-handle">
+                          <div class="select">
+                            <div class="icon-book"></div>
+                            <span>选用到稿库</span>
+                          </div>
+
+                          <div class="display">
+                            <div class="icon"></div>
+                            <span>隐藏大屏展示</span>
+                          </div>
+                        </div>
+                      </li>
+
+                      <li data-id="3" class="item second">
+                        <div class="thumb-image"
+                          style="background-image:url('https://rmt.eol.cn/files/Resource/jyzxweb/images/20230306/9d5e42907bcc4a005297be62f0b64102.jpg?t=1678090404') ;">
+                          <div class="news-index">2</div>
+                        </div>
+                        <div class="main-text">
+                          <a href="#" target="_blank" class="title">党员干部是基层党组织发挥战斗堡垒作用的中坚力量</a>
+                          <div class="other">
+                            <div class="source">江苏省常州市教育厅</div>
+                            <div class="time">2022-12-09 12:30</div>
+                          </div>
+                          <div class="description">
+                            公众的信任与信赖，构成了生生不息的繁荣景象。但是如今，人们却对专家的话半信半疑，甚至充满抱怨，此类的言论骂名充斥各地，究竟“专家”何时开始不受人们的待见？看看这些“专家”们，
+                            都干了什么事。
+                          </div>
+                          <div class="btn-groups">
+                            <div class="move">
+                              <div class="icon-move"></div>
+                              <span>拖动</span>
+                            </div>
+                            <div class="icon-top"></div>
+                          </div>
+                        </div>
+
+                        <div class="right-handle">
+                          <div class="select">
+                            <div class="icon-book"></div>
+                            <span>选用到稿库</span>
+                          </div>
+
+                          <div class="display">
+                            <div class="icon"></div>
+                            <span>隐藏大屏展示</span>
+                          </div>
+                        </div>
+                      </li>
+
+                      <li data-id="4" class="item third">
+                        <div class="thumb-image"
+                          style="background-image:url('https://rmt.eol.cn/files/Resource/jyzxweb/images/20230306/9d5e42907bcc4a005297be62f0b64102.jpg?t=1678090404') ;">
+                          <div class="news-index">3</div>
+                        </div>
+                        <div class="main-text">
+                          <a href="#" target="_blank" class="title">党员干部是基层党组织发挥战斗堡垒作用的中坚力量</a>
+                          <div class="other">
+                            <div class="source">江苏省常州市教育厅</div>
+                            <div class="time">2022-12-09 12:30</div>
+                          </div>
+                          <div class="description">
+                            公众的信任与信赖，构成了生生不息的繁荣景象。但是如今，人们却对专家的话半信半疑，甚至充满抱怨，此类的言论骂名充斥各地，究竟“专家”何时开始不受人们的待见？看看这些“专家”们，都干了什么事。公众的信任与信赖，构成了生生不息的繁荣景象。但是如今，人们却对专家的话半信半疑，甚至充满抱怨，此类的言论骂名充斥各地，究竟“专家”何时开始不受人们的待见？看看这些“专家”们，
+                            都干了什么事。
+                          </div>
+                          <div class="btn-groups">
+                            <div class="move">
+                              <div class="icon-move"></div>
+                              <span>拖动</span>
+                            </div>
+                            <div class="icon-top"></div>
+                          </div>
+                        </div>
+
+                        <div class="right-handle">
+                          <div class="select">
+                            <div class="icon-book"></div>
+                            <span>选用到稿库</span>
+                          </div>
+
+                          <div class="display">
+                            <div class="icon"></div>
+                            <span>隐藏大屏展示</span>
+                          </div>
+                        </div>
+                      </li>
+
+                      <li data-id="5" class="item">
+                        <div class="thumb-image"
+                          style="background-image:url('https://rmt.eol.cn/files/Resource/jyzxweb/images/20230306/9d5e42907bcc4a005297be62f0b64102.jpg?t=1678090404') ;">
+                          <div class="news-index">4</div>
+                        </div>
+                        <div class="main-text">
+                          <a href="#" target="_blank"
+                            class="title">党员干部是基层党组织发挥战斗堡垒作用的中坚力量党员干部是基层党组织发挥战斗堡垒作用的中坚力量党员干部是基层党组织发挥战斗堡垒作用的中坚力量党员干部是基层党组织发挥战斗堡垒作用的中坚力量党员干部是基层党组织发挥战斗堡垒作用的中坚力量党员干部是基层党组织发挥战斗堡垒作用的中坚力量</a>
+                          <div class="other">
+                            <div class="source">江苏省常州市教育厅</div>
+                            <div class="time">2022-12-09 12:30</div>
+                          </div>
+                          <div class="description">
+                            公众的信任与信赖，构成了生生不息的繁荣景象。但是如今，人们却对专家的话半信半疑，甚至充满抱怨，此类的言论骂名充斥各地，究竟“专家”何时开始不受人们的待见？看看这些“专家”们，都干了什么事。公众的信任与信赖，构成了生生不息的繁荣景象。但是如今，人们却对专家的话半信半疑，甚至充满抱怨，此类的言论骂名充斥各地，究竟“专家”何时开始不受人们的待见？看看这些“专家”们，
+                            都干了什么事。
+                          </div>
+                          <div class="btn-groups">
+                            <div class="move">
+                              <div class="icon-move"></div>
+                              <span>拖动</span>
+                            </div>
+                            <div class="icon-top"></div>
+                          </div>
+                        </div>
+
+                        <div class="right-handle">
+                          <div class="select">
+                            <div class="icon-book"></div>
+                            <span>选用到稿库</span>
+                          </div>
+
+                          <div class="display">
+                            <div class="icon"></div>
+                            <span>隐藏大屏展示</span>
+                          </div>
+                        </div>
+                      </li>
+
+                      <li data-id="6" class="item">
+                        <div class="thumb-image"
+                          style="background-image:url('https://rmt.eol.cn/files/Resource/jyzxweb/images/20230306/9d5e42907bcc4a005297be62f0b64102.jpg?t=1678090404') ;">
+                          <div class="news-index">5</div>
+                        </div>
+                        <div class="main-text">
+                          <a href="#" target="_blank" class="title">党员干部是基层党组织发挥战斗堡垒作用的中坚力量</a>
+                          <div class="other">
+                            <div class="source">江苏省常州市教育厅</div>
+                            <div class="time">2022-12-09 12:30</div>
+                          </div>
+                          <div class="description">
+                            公众的信任与信赖，构成了生生不息的繁荣景象。但是如今，人们却对专家的话半信半疑，甚至充满抱怨，此类的言论骂名充斥各地，究竟“专家”何时开始不受人们的待见？看看这些“专家”们，都干了什么事。公众的信任与信赖，构成了生生不息的繁荣景象。但是如今，人们却对专家的话半信半疑，甚至充满抱怨，此类的言论骂名充斥各地，究竟“专家”何时开始不受人们的待见？看看这些“专家”们，
+                            都干了什么事。
+                          </div>
+                          <div class="btn-groups">
+                            <div class="move">
+                              <div class="icon-move"></div>
+                              <span>拖动</span>
+                            </div>
+                            <div class="icon-top"></div>
+                          </div>
+                        </div>
+
+                        <div class="right-handle">
+                          <div class="select">
+                            <div class="icon-book"></div>
+                            <span>选用到稿库</span>
+                          </div>
+
+                          <div class="display">
+                            <div class="icon"></div>
+                            <span>隐藏大屏展示</span>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                    <div class="dataTables_wrapper">
+                      <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">显示第 1
+                        至 2 项结果，共 2 项</div>
+
+                      <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate">
+                        <ul class="pagination">
+                          <li class="paginate_button page-item previous disabled" id="DataTables_Table_0_previous"><a
+                              href="#" aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0"
+                              class="page-link">上页</a></li>
+                          <li class="paginate_button page-item active"><a href="#" aria-controls="DataTables_Table_0"
+                              data-dt-idx="1" tabindex="0" class="page-link">1</a></li>
+                          <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0"
+                              data-dt-idx="2" tabindex="0" class="page-link">2</a></li>
+                          <li class="paginate_button page-item next" id="DataTables_Table_0_next"><a href="#"
+                              aria-controls="DataTables_Table_0" data-dt-idx="3" tabindex="0" class="page-link">下页</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+
+          </div>
+      </div>
+
+      </section>
+    </div>
+    <!-- END: Content-->
+
+    <div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
+
+    <!-- Modal -->
+    <div class="modal fade text-left" id="xlarge" tabindex="-1" role="dialog" data-backdrop="true" data-keyboard="true">
+      <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content"></div>
+      </div>
+    </div>
+    <div class="modal fade text-left" id="large" tabindex="-1" role="dialog" data-backdrop="true" data-keyboard="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content"></div>
+      </div>
+    </div>
+    <div class="modal fade text-left" id="slarge" tabindex="-1" role="dialog" data-backdrop="true" data-keyboard="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content"></div>
+      </div>
+    </div>
+    <div class="uploading-outer-box" style="display: none">
+      <div class="upload-mask"></div>
+      <div class="loadding-content">
+        <div class="spinner-border text-primary" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="loadding-text" id="loadding-text">载入中</div>
+      </div>
+    </div>
+
+
+
+
+    <!-- BEGIN: Vendor JS-->
+    <script src="http://rmt.66.dev.eol.com.cn/app-assets/vendors/js/vendors.min.js"></script>
+    <!-- BEGIN Vendor JS-->
+
+    <!-- BEGIN: Page Vendor JS-->
+
+    <script
+      src="http://rmt.66.dev.eol.com.cn/app-assets/vendors/js/forms/spinner/jquery.bootstrap-touchspin.js"></script>
+
+    <!-- END: Page Vendor JS-->
+
+    <!-- BEGIN: Page JS-->
+    <script src="http://rmt.66.dev.eol.com.cn/app-assets/vendors/js/forms/validation/jqBootstrapValidation.js"></script>
+    <script src="http://rmt.66.dev.eol.com.cn/app-assets/vendors/js/forms/icheck/icheck.min.js"></script>
+    <script src="http://rmt.66.dev.eol.com.cn/app-assets/vendors/js/extensions/jquery.cookie.js"></script>
+    <script src="http://rmt.66.dev.eol.com.cn/app-assets/vendors/js/extensions/sweetalert2.all.min.11.2.1.js"></script>
+    <script
+      src="http://rmt.66.dev.eol.com.cn/app-assets/vendors/js/pickers/dateTime/moment-with-locales.min.js"></script>
+    <script src="http://rmt.66.dev.eol.com.cn/app-assets/vendors/js/pickers/daterange/daterangepicker.js"></script>
+
+    <script src="http://rmt.66.dev.eol.com.cn/app-assets/vendors/js/forms/toggle/bootstrap-switch.min.js"></script>
+    <script src="http://rmt.66.dev.eol.com.cn/app-assets/vendors/js/forms/toggle/switchery.min.js"></script>
+    <script src="http://rmt.66.dev.eol.com.cn/app-assets/vendors/js/forms/toggle/bootstrap-checkbox.min.js"></script>
+    <script src="http://rmt.66.dev.eol.com.cn/app-assets/js/scripts/forms/validation/form-validation.min.js"></script>
+    <script src="http://rmt.66.dev.eol.com.cn/app-assets/js/scripts/forms/switch.min.js"></script>
+    <script src="http://rmt.66.dev.eol.com.cn/app-assets/js/scripts/forms/bootstrap-tagsinput.min.js"></script>
+    <script src="http://rmt.66.dev.eol.com.cn/app-assets/vendors/js/ueditor/ueditor.config.js"></script>
+    <script src="http://rmt.66.dev.eol.com.cn/app-assets/vendors/js/ueditor/ueditor.all.js"></script>
+    <script src="http://rmt.66.dev.eol.com.cn/app-assets/vendors/js/ueditor/lang/zh-cn/zh-cn.js"></script>
+    <script src="http://rmt.66.dev.eol.com.cn/app-assets/js/scripts/forms/135editor.js"></script>
+    <script src="http://rmt.66.dev.eol.com.cn/app-assets/js/scripts/forms/extend.function.js"></script>
+    <script src="http://rmt.66.dev.eol.com.cn/app-assets/js/scripts/webuploader/webuploader.js"></script>
+
+    <script type="text/javascript">
+      $(function () {
+        initData();
+        $('.skin-square input').iCheck({
+          checkboxClass: 'icheckbox_square-red',
+          radioClass: 'iradio_square-red',
+        })
+      });
+
+      // 修改
+      // word上传
+      wordUploader = WebUploader.create({
+        accept: {
+          title: 'myself1',
+          // extensions: "doc,docx",
+          // mimeTypes: 'application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+          extensions: "docx",
+          mimeTypes: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+        },
+        pick: '#word_picker',
+        fileVal: 'filename',
+        fileNumLimit: 1,
+        compress: false,
+        resize: false,
+        auto: true, // 选完文件后，是否自动上传。
+        swf: '/public/app-assets/js/scripts/webuploader/Uploader.swf',    // swf文件路径
+        server: "http://rmt.66.dev.eol.com.cn/upload/file?is_tmp=1&is_image=0&read_doc=1",
+        fileSingleSizeLimit: 10485760,//
+      });
+
+      wordUploader.on('uploadSuccess', function (file, json) {
+        if (parseInt(json.code) !== 1) {
+          eolError(json.message);
+          return;
+        }
+        UE.getEditor('content').setContent(json.data);
+      });
+
+      wordUploader.on('uploadError', function (file) {
+        eolError('导入word失败');
+      });
+
+      wordUploader.on('uploadComplete', function (file) {
+        wordUploader.reset();
+      });
+
+      wordUploader.on('error', function (status) {
+        var errorTxt = '';
+        if (status === 'F_EXCEED_SIZE') {
+          errorTxt = '文件大小超出限制10M';
+        } else {
+          errorTxt = '其他错误';
+        }
+        eolError("提示:" + errorTxt);
+      });
+
+      var editor = UE.getEditor('content', {
+        UEDITOR_HOME_URL: '/app-assets/vendors/js/ueditor/',
+        serverUrl: "http://rmt.66.dev.eol.com.cn/ueditor/server",
+        toolbars: [['Source', 'Fullscreen', '|', 'Undo', 'Redo', '|',
+          'Bold', 'Italic', 'Underline', 'Fontborder', 'Strikethrough', 'Superscript', 'Subscript', 'Removeformat', 'Formatmatch', 'Autotypeset', 'Blockquote', 'Pasteplain', '|', 'Forecolor', 'Backcolor', 'Insertorderedlist', 'Insertunorderedlist', 'Selectall', 'Cleardoc', '|',
+          'Rowspacingtop', 'Rowspacingbottom', 'Lineheight', '|',
+          'Customstyle', 'Paragraph', 'Fontfamily', 'Fontsize', '|',
+          'Directionalityltr', 'Directionalityrtl', 'Indent', '|',
+          'Justifyleft', 'Justifycenter', 'Justifyright', 'Justifyjustify', '|', 'Touppercase', 'Tolowercase', '|',
+          'Link', 'Unlink', '|', 'Imagenone', 'Imageleft', 'Imageright', 'Imagecenter', '|',
+          'Insertimage', 'Insertvideo',
+          // 'Attachment',
+          // 'Map', 'Insertframe', 'Template', 'Background', '|',
+          'Map', 'Insertframe', 'Template', '|',
+          'Horizontal', 'Spechars', '|',
+          'Inserttable', 'Deletetable', 'Insertparagraphbeforetable', 'Insertrow', 'Deleterow', 'Insertcol', 'Deletecol', 'Mergecells', 'Mergeright', 'Mergedown', 'Splittocells', 'Splittorows', 'Splittocols', 'Charts', '|',
+          'Preview', 'Searchreplace', '135editor']],
+        initialFrameHeight: 480,
+        autoHeightEnabled: false,
+        autoFloatEnabled: true,
+        allowDivTransToP: true
+      });
+
+
+      function checkForm () {
+        if ($("#title").val() === "") {
+          eolError("标题不能为空");
+          return false;
+        }
+        if (UE.getEditor("content").getContent() === "") {
+          eolError("内容不能为空");
+          return false;
+        }
+        if ($("#class_id").val() === "") {
+          eolError("投稿部门不允许为空");
+          return false;
+        }
+        return true;
+      }
+
+      $('#draft_cropper').click(function () {
+        loadModal("http://rmt.66.dev.eol.com.cn/content/draft/cropper?url=" + $('#thumb').val(), $('#xlarge').modal('show'));
+      })
+
+      $('#draft_thumb_delete').click(function () {
+        initThumb();
+      })
+
+      $('#draft_preview').click(function () {
+        if (!checkForm()) {
+          return false;
+        }
+        //  无审核流 设置自动审核通过
+        loadModal("http://rmt.66.dev.eol.com.cn/content/draft/preview?type=" + $('#type').val(), $('#xlarge').modal('show'));
+      })
+
+      $('#draft_submit').click(function () {
+        if (!checkForm()) {
+          return false;
+        }
+        loadModal("http://rmt.66.dev.eol.com.cn/content/draft/submit?type=1", $('#large').modal('show'));
+      })
+
+      $('#draft_close').click(function () {
+        location.href = "http://rmt.66.dev.eol.com.cn/content/personal/draft/my_box"
+      })
+
+      function selectImageLibrary () {
+        loadModal("http://rmt.66.dev.eol.com.cn/resource/image/library", $('#xlarge').modal('show'));
+      }
+
+
+
+      //复写提交
+      var formDraftSingleton = false;
+
+      function submitDraftForm () {
+        if (formDraftSingleton) return false;
+        formDraftSingleton = true;
+        if (!checkForm()) {
+          wbUploader.refresh();
+          setTimeout(function () {
+            formDraftSingleton = false;
+          }, 1000);
+          return false;
+        }
+        let method, url;
+        let id = $('#id').val();
+        if (!id) {
+          method = 'POST';
+          url = `http://rmt.66.dev.eol.com.cn/content/draft?format=json`;
+        } else {
+          method = 'PUT';
+          url = `http://rmt.66.dev.eol.com.cn/content/draft/${id}?format=json`;
+        }
+
+        httpRequest(method, url, $('#draftCreateForm').serialize(true), function (data) {
+          setTimeout(function () {
+            formDraftSingleton = false;
+          }, 1000);
+          if (data.code === 1) { // 添加成功
+            location.href = "http://rmt.66.dev.eol.com.cn/content/personal/draft/my_box";
+            eolSuccess(data.message);
+          }
+
+          if (data.code === 2 && typeof data.errors === "undefined") { // 添加成功
+            eolAlertError("错误", data.message);
+          }
+          if (data.errors) {
+            dataErrors = [];
+            for (index in data.errors) {
+              dataErrors.push(data.errors[index].join('|'));
+            }
+            eolAlertError("错误", dataErrors.join('|'));
+
+          }
+        }
+        )
+        return false;
+      }
+
+      //文件上传
+      wbUploader = WebUploader.create({
+        accept: {
+          title: 'myself1',
+          extensions: "png,jpg,jpeg,gif,bmp",
+          mimeTypes: 'image/*'
+        },
+        pick: '#picker',
+        fileVal: 'filename',
+        fileNumLimit: 1,
+        compress: false,
+        resize: false,
+        auto: true, // 选完文件后，是否自动上传。
+        swf: '/public/app-assets/js/scripts/webuploader/Uploader.swf',    // swf文件路径
+        server: "http://rmt.66.dev.eol.com.cn/upload/file?is_tmp=1&cover_image=1",
+        fileSingleSizeLimit: 2097152,//
+      });
+      // 文件上传过程中创建进度条实时显示。
+      wbUploader.on('uploadProgress', function (file, json) {
+        var $li = $('#' + file.id),
+          $percent = $li.find('.progress .progress-bar');
+        // 避免重复创建
+        if (!$percent.length) {
+          $percent = $('<div class="progress progress-striped active">' +
+            '<div class="progress-bar" role="progressbar" style="width: 0%">' +
+            '</div>' +
+            '</div>').appendTo($li).find('.progress-bar');
+        }
+        $percent.css('width', json * 100 + '%');
+      });
+      //上传成功处理
+      wbUploader.on('uploadSuccess', function (file, json) {
+        if (parseInt(json.code) !== 1) {
+          initThumb();
+          eolError(json.message);
+          return;
+        }
+        addThumb(json.data.url, json.data.thumb_url)
+      });
+
+      wbUploader.on('uploadError', function (file) {
+        initThumb();
+        eolError('上传失败');
+      });
+
+      wbUploader.on('uploadComplete', function (file) {
+        $('#' + file.id).find('.progress').remove();
+        wbUploader.reset();
+      });
+
+      // 上传错误
+      wbUploader.on('error', function (status) {
+        var errorTxt = '';
+        if (status === 'F_EXCEED_SIZE') {
+          errorTxt = '文件大小超出限制2M';
+        } else {
+          errorTxt = '其他错误';
+        }
+        eolError("提示:" + errorTxt);
+      });
+
+      function initThumb () {
+        $('.imgs-message-box').show();
+        $('.imgs-content-box').attr('src', '').hide();
+        $('#thumb').val('');
+        $('#draft_cropper').hide();
+        $('#draft_thumb_delete').hide();
+      }
+
+      function addThumb (url, thumb_url) {
+        $('.imgs-message-box').hide();
+        $('.imgs-content-box').attr('src', thumb_url).show();
+        $('#thumb').val(url);
+        $('#draft_cropper').show();
+        $('#draft_thumb_delete').show();
+      }
+
+      function getKeywords (title) {
+        httpRequest("get", "/plan/getKeywords" + "?format=json&title=" + title, {}, function (data) {
+          if (parseInt(data.code) === 1) {
+            $('#keywords').tagsinput('add', data.message);
+          }
+        });
+      }
+
+
+    </script>
+    <script src="http://rmt.66.dev.eol.com.cn/app-assets/js/scripts/forms/common.function.js"></script>
+
+    <!-- END: Page JS-->
+    <!-- BEGIN: Theme JS-->
+    <script src="http://rmt.66.dev.eol.com.cn/app-assets/js/core/app-menu.min.js"></script>
+    <script src="http://rmt.66.dev.eol.com.cn/app-assets/js/core/app.min.js"></script>
+
+    <!-- END: Theme JS-->
+
+
+    <script type="text/javascript">
+      // 退出登录 wangxy 2021-05-14
+      function jumpLogin () {
+        $.ajax({
+          type: "GET",
+          url: "http://rmt.66.dev.eol.com.cn/register/passLogout",
+          dataType: "json",
+          xhrFields: {
+            withCredentials: true //允许跨域带Cookie
+          },
+          crossDomain: true,
+          success: function (data) {
+
+            $.ajax({
+              type: "GET",
+              url: data.logoutUrl,
+              dataType: "json",
+              xhrFields: {
+                withCredentials: true //允许跨域带Cookie
+              },
+              crossDomain: true,
+              success: function (passdata) {
+                if (passdata.code == 1) {
+                  //登录
+                  location.href = data.loginUrl;
+                }
+              }
+            });
+          }
+        });
+      }
+
+
+    </script>
+
+    <!-- 我的JS -->
+    <script src="../js/sortTable.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        // 配置项可参考 http://www.sortablejs.com/options.html
+        new Sortable(document.getElementById('moveList'), {
+          handle: '.move', // 只允许move类名拖拽;
+          animation: 300, // 单位：ms,定义排序动画的时间;
+          forceFallback: true, // 忽略 HTML5拖拽行为，强制回调进行;
+          // 拖拽更新后的回调
+          onUpdate: function (evt) {
+            console.log(evt.oldIndex, evt.newIndex, evt.item.getAttribute("data-id")); // oldIndex 旧的索引 newIndex 新的索引 evt.item.getAttribute("data-id") 当前行id
+          },
+        });
+      })
+
+    </script>
+
+
+
+</body>
+<!-- END: Body-->
+
+</html>
